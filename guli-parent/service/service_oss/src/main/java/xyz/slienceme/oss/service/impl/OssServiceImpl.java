@@ -1,16 +1,14 @@
-package com.atguigu.oss.service.impl;
+package xyz.slienceme.oss.service.impl;
 
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
-import com.atguigu.oss.service.OssService;
-import com.atguigu.oss.utils.ConstantPropertiesUtils;
+import xyz.slienceme.oss.service.OssService;
+import xyz.slienceme.oss.utils.ConstantPropertiesUtils;
 import org.joda.time.DateTime;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.InputStream;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.UUID;
 
 @Service
@@ -27,7 +25,7 @@ public class OssServiceImpl implements OssService {
 
         try {
             // 创建OSS实例。
-                       OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
+            OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
 
             //获取上传文件输入流
             InputStream inputStream = file.getInputStream();
@@ -51,7 +49,7 @@ public class OssServiceImpl implements OssService {
             //第一个参数  Bucket名称
             //第二个参数  上传到oss文件路径和文件名称   aa/bb/1.jpg
             //第三个参数  上传文件输入流
-            ossClient.putObject(bucketName,fileName , inputStream);
+            ossClient.putObject(bucketName, fileName , inputStream);
 
             // 关闭OSSClient。
             ossClient.shutdown();

@@ -1,4 +1,4 @@
-package com.atguigu.eduservice.entity;
+package xyz.slienceme.eduservice.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -18,8 +18,8 @@ import lombok.experimental.Accessors;
  * 课程科目
  * </p>
  *
- * @author testjava
- * @since 2020-02-29
+ * @author slience_me
+ * @since 2024-01-26
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

@@ -1,4 +1,4 @@
-package com.atguigu.eduservice.entity.excel;
+package xyz.slienceme.eduservice.entity.excel;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import lombok.Data;

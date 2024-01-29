@@ -1,6 +1,6 @@
-package com.atguigu.eduservice.service;
+package xyz.slienceme.eduservice.service;
 
-import com.atguigu.eduservice.entity.EduSubject;
+import xyz.slienceme.eduservice.entity.EduSubject;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -9,8 +9,8 @@ import org.springframework.web.multipart.MultipartFile;
  * 课程科目 服务类
  * </p>
  *
- * @author testjava
- * @since 2020-02-29
+ * @author slience_me
+ * @since 2024-01-26
  */
 public interface EduSubjectService extends IService<EduSubject> {
 

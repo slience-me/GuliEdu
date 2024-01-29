@@ -28,8 +28,8 @@ import java.util.List;
  */
 @Api(description="讲师管理")
 @RestController
-@CrossOrigin
-@RequestMapping("/eduservice/edu-teacher")
+@RequestMapping("/eduservice/teacher")
+@CrossOrigin()
 public class EduTeacherController {
 
     //访问地址： http://localhost:8001/eduservice/teacher/findAll
@@ -69,11 +69,11 @@ public class EduTeacherController {
         //创建page对象
         Page<EduTeacher> pageTeacher = new Page<>(current,limit);
 
-        try {
-            int a = 10/0;
-        }catch(Exception e) {
-            throw new GuliException(20001,"出现自定义异常");
-        }
+//        try {
+//            int a = 10/0;
+//        }catch(Exception e) {
+//            throw new GuliException(20001,"出现自定义异常");
+//        }
         //调用方法实现分页
         //调用方法时候，底层封装，把分页所有数据封装到pageTeacher对象里面
         teacherService.page(pageTeacher,null);

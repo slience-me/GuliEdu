@@ -1,9 +1,9 @@
-package com.atguigu.eduservice.controller;
+package xyz.slienceme.eduservice.controller;
 
 
-import com.atguigu.commonutils.R;
-import com.atguigu.eduservice.entity.EduSubject;
-import com.atguigu.eduservice.service.EduSubjectService;
+import xyz.slienceme.commonutils.R;
+import xyz.slienceme.eduservice.entity.EduSubject;
+import xyz.slienceme.eduservice.service.EduSubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,8 +17,8 @@ import org.springframework.web.multipart.MultipartFile;
  * 课程科目 前端控制器
  * </p>
  *
- * @author testjava
- * @since 2020-02-29
+ * @author slience_me
+ * @since 2024-01-26
  */
 @RestController
 @RequestMapping("/eduservice/subject")

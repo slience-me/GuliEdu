@@ -1,6 +1,6 @@
-package com.atguigu.eduservice.mapper;
+package xyz.slienceme.eduservice.mapper;
 
-import com.atguigu.eduservice.entity.EduSubject;
+import xyz.slienceme.eduservice.entity.EduSubject;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -8,8 +8,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * 课程科目 Mapper 接口
  * </p>
  *
- * @author testjava
- * @since 2020-02-29
+ * @author slience_me
+ * @since 2024-01-26
  */
 public interface EduSubjectMapper extends BaseMapper<EduSubject> {
 
