@@ -3,8 +3,8 @@
     <el-input v-model="filterText" placeholder="Filter keyword" style="margin-bottom:30px;" />
 
     <el-tree
-      ref="tree2"
-      :data="data2"
+      ref="tree"
+      :data="list"
       :props="defaultProps"
       :filter-node-method="filterNode"
       class="filter-tree"
@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       filterText: '',
-      data2: [],  //返回所有分类数据
+      list: [],  //返回所有分类数据
       defaultProps: {
         children: 'children',
         label: 'title'
@@ -33,7 +33,7 @@ export default {
   },
   watch: {
     filterText(val) {
-      this.$refs.tree2.filter(val)
+      this.$refs.tree.filter(val)
     }
   },
 
@@ -41,7 +41,7 @@ export default {
     getAllSubjectList() {
         subject.getSubjectList()
             .then(response => {
-                this.data2 = response.data.list
+                this.list = response.data.list
             })
     },
     filterNode(value, data) {
