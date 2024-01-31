@@ -54,7 +54,7 @@
                  class="vam picImg"
                  alt
                  >
-            <span id="userName" class="vam disIb">{{ loginInfo.nickname }}</span>
+            <span id="userName" class="vam disIb" style="width: 30px">{{ loginInfo.nickname }}</span>
         </a>
         <a href="javascript:void(0);" title="退出" @click="logout()" class="ml5">退出</a>
     </li>
@@ -78,7 +78,7 @@
       </section>
     </header>
     <!-- /公共头引入 -->
-      
+
     <nuxt/>
 
     <!-- 公共底引入 -->

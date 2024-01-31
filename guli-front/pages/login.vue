@@ -31,7 +31,7 @@
       <div class="more-sign">
         <h6>社交帐号登录</h6>
         <ul>
-          <li><a id="weixin" class="weixin" target="_blank" href="http://qy.free.idcfengye.com/api/ucenter/weixinLogin/login"><i class="iconfont icon-weixin"/></a></li>
+          <li><a id="weixin" class="weixin" target="_blank" href="http://localhost:8160/api/ucenter/wx/login"><i class="iconfont icon-weixin"/></a></li>
           <li><a id="qq" class="qq" target="_blank" href="#"><i class="iconfont icon-qq"/></a></li>
         </ul>
       </div>
@@ -66,12 +66,12 @@
       //登录的方法
       submitLogin() {
         //第一步 调用接口进行登录，返回token字符串
-        loginApi.submitLoginUser(this.user) 
+        loginApi.submitLoginUser(this.user)
            .then(response => {
              //第二步 获取token字符串放到cookie里面
              //第一个参数cookie名称，第二个参数值，第三个参数作用范围
              cookie.set('guli_token',response.data.data.token,{domain: 'localhost'})
-             
+
               //第四步 调用接口 根据token获取用户信息，为了首页面显示
               loginApi.getLoginUserInfo()
                 .then(response => {
