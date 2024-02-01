@@ -28,7 +28,6 @@ export default {
   },
   methods: {
     getVideoData(vid) {
-      console.log("=========getVideoData getPlayAuth===========")
       vod.getPlayAuth(vid)
         .then(response => {
           this.playAuth = response.data.data.playAuth;
