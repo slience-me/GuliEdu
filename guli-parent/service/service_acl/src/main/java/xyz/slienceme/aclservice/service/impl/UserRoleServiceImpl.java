@@ -1,8 +1,8 @@
-package com.atguigu.aclservice.service.impl;
+package xyz.slienceme.aclservice.service.impl;
 
-import com.atguigu.aclservice.entity.UserRole;
-import com.atguigu.aclservice.mapper.UserRoleMapper;
-import com.atguigu.aclservice.service.UserRoleService;
+import xyz.slienceme.aclservice.entity.UserRole;
+import xyz.slienceme.aclservice.mapper.UserRoleMapper;
+import xyz.slienceme.aclservice.service.UserRoleService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
  *  服务实现类
  * </p>
  *
- * @author testjava
- * @since 2020-01-12
+ * @author slience_me
+ * @since 2024-02-02
  */
 @Service
 public class UserRoleServiceImpl extends ServiceImpl<UserRoleMapper, UserRole> implements UserRoleService {

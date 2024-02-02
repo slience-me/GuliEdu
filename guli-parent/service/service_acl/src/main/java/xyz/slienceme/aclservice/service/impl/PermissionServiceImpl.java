@@ -1,15 +1,15 @@
-package com.atguigu.aclservice.service.impl;
+package xyz.slienceme.aclservice.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.atguigu.aclservice.entity.Permission;
-import com.atguigu.aclservice.entity.RolePermission;
-import com.atguigu.aclservice.entity.User;
-import com.atguigu.aclservice.helper.MemuHelper;
-import com.atguigu.aclservice.helper.PermissionHelper;
-import com.atguigu.aclservice.mapper.PermissionMapper;
-import com.atguigu.aclservice.service.PermissionService;
-import com.atguigu.aclservice.service.RolePermissionService;
-import com.atguigu.aclservice.service.UserService;
+import xyz.slienceme.aclservice.entity.Permission;
+import xyz.slienceme.aclservice.entity.RolePermission;
+import xyz.slienceme.aclservice.entity.User;
+import xyz.slienceme.aclservice.helper.MemuHelper;
+import xyz.slienceme.aclservice.helper.PermissionHelper;
+import xyz.slienceme.aclservice.mapper.PermissionMapper;
+import xyz.slienceme.aclservice.service.PermissionService;
+import xyz.slienceme.aclservice.service.RolePermissionService;
+import xyz.slienceme.aclservice.service.UserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +25,8 @@ import java.util.stream.Collectors;
  * 权限 服务实现类
  * </p>
  *
- * @author testjava
- * @since 2020-01-12
+ * @author slience_me
+ * @since 2024-02-02
  */
 @Service
 public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permission> implements PermissionService {

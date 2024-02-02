@@ -1,4 +1,4 @@
-package com.atguigu.commonutils.ordervo;
+package xyz.slienceme.commonutils.ordervo;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

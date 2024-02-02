@@ -1,10 +1,10 @@
-package com.atguigu.eduservice.controller.front;
+package xyz.slienceme.eduservice.controller.front;
 
-import com.atguigu.commonutils.R;
-import com.atguigu.eduservice.entity.EduCourse;
-import com.atguigu.eduservice.entity.EduTeacher;
-import com.atguigu.eduservice.service.EduCourseService;
-import com.atguigu.eduservice.service.EduTeacherService;
+import xyz.slienceme.commonutils.R;
+import xyz.slienceme.eduservice.entity.EduCourse;
+import xyz.slienceme.eduservice.entity.EduTeacher;
+import xyz.slienceme.eduservice.service.EduCourseService;
+import xyz.slienceme.eduservice.service.EduTeacherService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/eduservice/teacherfront")
-@CrossOrigin
+//@CrossOrigin()
 public class TeacherFrontController {
 
     @Autowired

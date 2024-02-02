@@ -12,11 +12,12 @@ import java.util.Date;
  * token管理
  * </p>
  *
- * @author qy
- * @since 2019-11-08
+ * @author slience_me
+ * @since 2024-02-02
  */
 @Component
 public class TokenManager {
+    /** token过期时间 24小时 */
 
     private long tokenExpiration = 24*60*60*1000;
     private String tokenSignKey = "123456";
@@ -28,6 +29,12 @@ public class TokenManager {
         return token;
     }
 
+
+    /**
+     * 根据token获取信息
+     * @param token token
+     * @return
+     */
     public String getUserFromToken(String token) {
         String user = Jwts.parser().setSigningKey(tokenSignKey).parseClaimsJws(token).getBody().getSubject();
         return user;

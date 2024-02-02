@@ -10,10 +10,10 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableDiscoveryClient
 @ComponentScan("xyz.slienceme")
 @MapperScan("xyz.slienceme.aclservice.mapper")
-public class ServiceAclApplication {
+public class AclApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ServiceAclApplication.class, args);
+        SpringApplication.run(AclApplication.class, args);
     }
 
 }

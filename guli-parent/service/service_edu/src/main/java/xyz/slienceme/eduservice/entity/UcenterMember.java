@@ -1,4 +1,4 @@
-package com.oy.guli.teacher.entity;
+package xyz.slienceme.eduservice.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -19,7 +19,7 @@ import java.util.Date;
  * </p>
  *
  * @author guli
- * @since 2021-03-27
+ * @since 2024-01-30
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

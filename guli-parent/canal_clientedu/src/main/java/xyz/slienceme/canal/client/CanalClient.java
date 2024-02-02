@@ -1,4 +1,4 @@
-package com.atguigu.canal.client;
+package xyz.slienceme.canal.client;
 
 import com.alibaba.otter.canal.client.CanalConnector;
 import com.alibaba.otter.canal.client.CanalConnectors;
@@ -33,7 +33,7 @@ public class CanalClient {
      */
     public void run() {
 
-        CanalConnector connector = CanalConnectors.newSingleConnector(new InetSocketAddress("192.168.44.132",
+        CanalConnector connector = CanalConnectors.newSingleConnector(new InetSocketAddress("101.43.170.68",
                 11111), "example", "", "");
         int batchSize = 1000;
         try {

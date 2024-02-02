@@ -1,4 +1,4 @@
-package com.atguigu.commonutils.ordervo;
+package xyz.slienceme.commonutils.ordervo;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;

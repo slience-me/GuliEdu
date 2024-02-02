@@ -1,4 +1,4 @@
-package com.atguigu.gateway;
+package xyz.slienceme.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

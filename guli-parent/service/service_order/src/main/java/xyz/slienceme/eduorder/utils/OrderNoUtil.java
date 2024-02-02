@@ -1,4 +1,4 @@
-package com.atguigu.eduorder.utils;
+package xyz.slienceme.eduorder.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

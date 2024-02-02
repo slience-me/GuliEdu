@@ -1,6 +1,6 @@
-package com.atguigu.eduorder.service;
+package xyz.slienceme.eduorder.service;
 
-import com.atguigu.eduorder.entity.PayLog;
+import xyz.slienceme.eduorder.entity.PayLog;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.Map;
@@ -10,8 +10,8 @@ import java.util.Map;
  * 支付日志表 服务类
  * </p>
  *
- * @author testjava
- * @since 2020-03-13
+ * @author slience_me
+ * @since 2024-01-31
  */
 public interface PayLogService extends IService<PayLog> {
 

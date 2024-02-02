@@ -2,19 +2,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>xyz.slienceme</groupId>
         <artifactId>common</artifactId>
+        <groupId>xyz.slienceme</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>service_base</artifactId>
 
     <name>service_base</name>
-    <url>http://maven.apache.org</url>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -22,6 +17,5 @@
             <artifactId>common_utils</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-
     </dependencies>
 </project>

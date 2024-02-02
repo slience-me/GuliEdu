@@ -1,10 +1,10 @@
-package com.atguigu.aclservice.controller;
+package xyz.slienceme.aclservice.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.atguigu.aclservice.entity.Permission;
-import com.atguigu.aclservice.service.IndexService;
-import com.atguigu.aclservice.service.PermissionService;
-import com.atguigu.commonutils.R;
+import xyz.slienceme.aclservice.entity.Permission;
+import xyz.slienceme.aclservice.service.IndexService;
+import xyz.slienceme.aclservice.service.PermissionService;
+import xyz.slienceme.commonutils.R;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;

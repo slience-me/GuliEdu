@@ -9,17 +9,11 @@
 
     <artifactId>common</artifactId>
     <packaging>pom</packaging>
-
-    <name>common</name>
-    <url>http://maven.apache.org</url>
     <modules>
         <module>service_base</module>
         <module>common_utils</module>
+        <module>spring_security</module>
     </modules>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
     <dependencies>
         <dependency>

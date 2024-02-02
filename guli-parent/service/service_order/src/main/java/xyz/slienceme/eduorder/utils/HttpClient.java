@@ -1,4 +1,4 @@
-package com.atguigu.eduorder.utils;
+package xyz.slienceme.eduorder.utils;
 
 import org.apache.http.Consts;
 import org.apache.http.HttpEntity;

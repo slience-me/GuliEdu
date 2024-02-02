@@ -1,7 +1,7 @@
 package xyz.slienceme.serurity.security;
 
-import com.atguigu.commonutils.R;
-import com.atguigu.commonutils.ResponseUtil;
+import xyz.slienceme.commonutils.R;
+import xyz.slienceme.commonutils.ResponseUtil;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
@@ -14,10 +14,11 @@ import javax.servlet.http.HttpServletResponse;
  * 登出业务逻辑类
  * </p>
  *
- * @author qy
- * @since 2019-11-08
+ * @author slience_me
+ * @since 2024-02-02
  */
 public class TokenLogoutHandler implements LogoutHandler {
+    /** Token管理类 */
 
     private TokenManager tokenManager;
     private RedisTemplate redisTemplate;
@@ -27,6 +28,12 @@ public class TokenLogoutHandler implements LogoutHandler {
         this.redisTemplate = redisTemplate;
     }
 
+    /**
+     * 登出业务处理
+     * @param request request
+     * @param response response
+     * @param authentication
+     */
     @Override
     public void logout(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
         String token = request.getHeader("token");

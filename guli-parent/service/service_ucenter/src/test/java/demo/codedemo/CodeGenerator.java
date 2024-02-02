@@ -53,9 +53,9 @@ public class CodeGenerator {
         // 4、包配置
         PackageConfig pc = new PackageConfig();
         pc.setModuleName("educenter"); //模块名
-        //包  com.atguigu.eduservice
-        pc.setParent("com.atguigu");
-        //包  com.atguigu.eduservice.controller
+        //包  xyz.slienceme.eduservice
+        pc.setParent("xyz.slienceme");
+        //包  xyz.slienceme.eduservice.controller
         pc.setController("controller");
         pc.setEntity("entity");
         pc.setService("service");

@@ -1,8 +1,8 @@
-package com.atguigu.aclservice.service.impl;
+package xyz.slienceme.aclservice.service.impl;
 
-import com.atguigu.aclservice.entity.RolePermission;
-import com.atguigu.aclservice.mapper.RolePermissionMapper;
-import com.atguigu.aclservice.service.RolePermissionService;
+import xyz.slienceme.aclservice.entity.RolePermission;
+import xyz.slienceme.aclservice.mapper.RolePermissionMapper;
+import xyz.slienceme.aclservice.service.RolePermissionService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
  * 角色权限 服务实现类
  * </p>
  *
- * @author testjava
- * @since 2020-01-12
+ * @author slience_me
+ * @since 2024-02-02
  */
 @Service
 public class RolePermissionServiceImpl extends ServiceImpl<RolePermissionMapper, RolePermission> implements RolePermissionService {

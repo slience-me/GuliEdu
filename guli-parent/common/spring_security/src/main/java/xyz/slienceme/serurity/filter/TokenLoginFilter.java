@@ -1,10 +1,10 @@
 package xyz.slienceme.serurity.filter;
 
-import com.atguigu.commonutils.R;
-import com.atguigu.commonutils.ResponseUtil;
-import com.atguigu.serurity.entity.SecurityUser;
-import com.atguigu.serurity.entity.User;
-import com.atguigu.serurity.security.TokenManager;
+import xyz.slienceme.commonutils.R;
+import xyz.slienceme.commonutils.ResponseUtil;
+import xyz.slienceme.serurity.entity.SecurityUser;
+import xyz.slienceme.serurity.entity.User;
+import xyz.slienceme.serurity.security.TokenManager;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -26,8 +26,8 @@ import java.util.ArrayList;
  * 登录过滤器，继承UsernamePasswordAuthenticationFilter，对用户名密码进行登录校验
  * </p>
  *
- * @author qy
- * @since 2019-11-08
+ * @author slience_me
+ * @since 2024-02-02
  */
 public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
 
@@ -36,16 +36,17 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
     private RedisTemplate redisTemplate;
 
     public TokenLoginFilter(AuthenticationManager authenticationManager, TokenManager tokenManager, RedisTemplate redisTemplate) {
+        System.out.println("TokenLoginFilter构造器ing===================================");
         this.authenticationManager = authenticationManager;
         this.tokenManager = tokenManager;
         this.redisTemplate = redisTemplate;
         this.setPostOnly(false);
-        this.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher("/admin/acl/login","POST"));
+        // 认证路径 - 发送什么请求，就会进行认证
+        this.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher("/admin/acl/login", "POST"));
     }
 
     @Override
-    public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res)
-            throws AuthenticationException {
+    public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res) throws AuthenticationException {
         try {
             User user = new ObjectMapper().readValue(req.getInputStream(), User.class);
 
@@ -58,6 +59,7 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
 
     /**
      * 登录成功
+     *
      * @param req
      * @param res
      * @param chain
@@ -77,6 +79,7 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
 
     /**
      * 登录失败
+     *
      * @param request
      * @param response
      * @param e

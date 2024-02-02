@@ -1,9 +1,9 @@
-package com.atguigu.aclservice.controller;
+package xyz.slienceme.aclservice.controller;
 
 
-import com.atguigu.aclservice.entity.Role;
-import com.atguigu.aclservice.service.RoleService;
-import com.atguigu.commonutils.R;
+import xyz.slienceme.aclservice.entity.Role;
+import xyz.slienceme.aclservice.service.RoleService;
+import xyz.slienceme.commonutils.R;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.ApiOperation;
@@ -19,8 +19,8 @@ import java.util.List;
  *  前端控制器
  * </p>
  *
- * @author testjava
- * @since 2020-01-12
+ * @author slience_me
+ * @since 2024-02-02
  */
 @RestController
 @RequestMapping("/admin/acl/role")

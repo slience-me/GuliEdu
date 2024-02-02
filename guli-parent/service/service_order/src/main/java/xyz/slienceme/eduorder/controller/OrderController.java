@@ -1,10 +1,10 @@
-package com.atguigu.eduorder.controller;
+package xyz.slienceme.eduorder.controller;
 
 
-import com.atguigu.commonutils.JwtUtils;
-import com.atguigu.commonutils.R;
-import com.atguigu.eduorder.entity.Order;
-import com.atguigu.eduorder.service.OrderService;
+import xyz.slienceme.commonutils.JwtUtils;
+import xyz.slienceme.commonutils.R;
+import xyz.slienceme.eduorder.entity.Order;
+import xyz.slienceme.eduorder.service.OrderService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,12 +16,12 @@ import javax.servlet.http.HttpServletRequest;
  * 订单 前端控制器
  * </p>
  *
- * @author testjava
- * @since 2020-03-13
+ * @author slience_me
+ * @since 2024-01-31
  */
 @RestController
 @RequestMapping("/eduorder/order")
-@CrossOrigin
+//@CrossOrigin()
 public class OrderController {
 
     @Autowired
@@ -31,8 +31,7 @@ public class OrderController {
     @PostMapping("createOrder/{courseId}")
     public R saveOrder(@PathVariable String courseId, HttpServletRequest request) {
         //创建订单，返回订单号
-        String orderNo =
-                orderService.createOrders(courseId,JwtUtils.getMemberIdByJwtToken(request));
+        String orderNo = orderService.createOrders(courseId,JwtUtils.getMemberIdByJwtToken(request));
         return R.ok().data("orderId",orderNo);
     }
 
@@ -43,6 +42,21 @@ public class OrderController {
         wrapper.eq("order_no",orderId);
         Order order = orderService.getOne(wrapper);
         return R.ok().data("item",order);
+    }
+
+    //根据课程id和用户id查询订单表中订单状态
+    @GetMapping("isBuyCourse/{courseId}/{memberId}")
+    public boolean isBuyCourse(@PathVariable("courseId") String courseId, @PathVariable("memberId") String memberId) {
+        QueryWrapper<Order> wrapper = new QueryWrapper<>();
+        wrapper.eq("course_id",courseId);
+        wrapper.eq("member_id",memberId);
+        wrapper.eq("status",1);//支付状态 1代表已经支付
+        int count = orderService.count(wrapper);
+        if(count>0) { //已经支付
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 

@@ -1,9 +1,9 @@
-package com.atguigu.aclservice.service.impl;
+package xyz.slienceme.aclservice.service.impl;
 
-import com.atguigu.aclservice.entity.User;
-import com.atguigu.aclservice.service.PermissionService;
-import com.atguigu.aclservice.service.UserService;
-import com.atguigu.serurity.entity.SecurityUser;
+import xyz.slienceme.aclservice.entity.User;
+import xyz.slienceme.aclservice.service.PermissionService;
+import xyz.slienceme.aclservice.service.UserService;
+import xyz.slienceme.serurity.entity.SecurityUser;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,8 +19,8 @@ import java.util.List;
  * 自定义userDetailsService - 认证用户详情
  * </p>
  *
- * @author qy
- * @since 2019-11-08
+ * @author slience_me
+ * @since 2024-02-02
  */
 @Service("userDetailsService")
 public class UserDetailsServiceImpl implements UserDetailsService {
@@ -42,12 +42,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         User user = userService.selectByUsername(username);
 
         // 判断用户是否存在
-        if (null == user){
+        if (null == user) {
             //throw new UsernameNotFoundException("用户名不存在！");
         }
         // 返回UserDetails实现类
-        com.atguigu.serurity.entity.User curUser = new com.atguigu.serurity.entity.User();
-        BeanUtils.copyProperties(user,curUser);
+        xyz.slienceme.serurity.entity.User curUser = new xyz.slienceme.serurity.entity.User();
+        BeanUtils.copyProperties(user, curUser);
 
         List<String> authorities = permissionService.selectPermissionValueByUserId(user.getId());
         SecurityUser securityUser = new SecurityUser(curUser);

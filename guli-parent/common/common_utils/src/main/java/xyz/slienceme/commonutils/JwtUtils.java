@@ -9,9 +9,6 @@ import org.springframework.util.StringUtils;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
-/**
- * @author
- */
 public class JwtUtils {
 
     public static final long EXPIRE = 1000 * 60 * 60 * 24;

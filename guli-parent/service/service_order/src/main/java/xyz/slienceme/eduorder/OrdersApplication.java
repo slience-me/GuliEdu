@@ -1,4 +1,4 @@
-package com.atguigu.eduorder;
+package xyz.slienceme.eduorder;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -11,8 +11,8 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-@ComponentScan(basePackages = {"com.atguigu"})
-@MapperScan("com.atguigu.eduorder.mapper")
+@ComponentScan(basePackages = {"xyz.slienceme"})
+@MapperScan("xyz.slienceme.eduorder.mapper")
 public class OrdersApplication {
 
     public static void main(String[] args) {

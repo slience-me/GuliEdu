@@ -1,6 +1,6 @@
-package com.atguigu.staservice.service;
+package xyz.slienceme.staservice.service;
 
-import com.atguigu.staservice.entity.StatisticsDaily;
+import xyz.slienceme.staservice.entity.StatisticsDaily;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.Map;
@@ -10,8 +10,8 @@ import java.util.Map;
  * 网站统计日数据 服务类
  * </p>
  *
- * @author testjava
- * @since 2020-03-14
+ * @author slience_me
+ * @since 2024-01-31
  */
 public interface StatisticsDailyService extends IService<StatisticsDaily> {
 

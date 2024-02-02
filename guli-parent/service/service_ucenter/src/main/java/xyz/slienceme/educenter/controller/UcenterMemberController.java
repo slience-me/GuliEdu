@@ -1,8 +1,10 @@
 package xyz.slienceme.educenter.controller;
 
 
+import org.springframework.beans.BeanUtils;
 import xyz.slienceme.commonutils.JwtUtils;
 import xyz.slienceme.commonutils.R;
+import xyz.slienceme.commonutils.ordervo.UcenterMemberOrder;
 import xyz.slienceme.educenter.entity.UcenterMember;
 import xyz.slienceme.educenter.entity.vo.RegisterVo;
 import xyz.slienceme.educenter.service.UcenterMemberService;
@@ -21,7 +23,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @RestController
 @RequestMapping("/educenter/member")
-@CrossOrigin
+//@CrossOrigin()
 public class UcenterMemberController {
 
     @Autowired
@@ -53,5 +55,47 @@ public class UcenterMemberController {
         UcenterMember member = memberService.getById(memberId);
         return R.ok().data("userInfo",member);
     }
+
+    /**
+     * 评论模块根据用户id获取用户信息
+     * @param id
+     * @return
+     */
+    @GetMapping("getInfoUc/{id}")
+    public UcenterMember getInfo(@PathVariable String id) {
+        //根据用户id获取用户信息
+        UcenterMember ucenterMember = memberService.getById(id);
+        UcenterMember memeber = new UcenterMember();
+        BeanUtils.copyProperties(ucenterMember,memeber);
+        return memeber;
+    }
+
+    /**
+     * 订单模块根据用户id获取用户信息
+     * @param id
+     * @return
+     */
+    @GetMapping("getUserInfoOrder/{id}")
+    public UcenterMemberOrder getUserInfoOrder(@PathVariable String id) {
+        //根据用户id获取用户信息
+        UcenterMember ucenterMember = memberService.getById(id);
+        //把member对象里面值复制给UcenterMemberOrder对象
+        UcenterMemberOrder ucenterMemberOrder = new UcenterMemberOrder();
+        BeanUtils.copyProperties(ucenterMember,ucenterMemberOrder);
+        return ucenterMemberOrder;
+    }
+
+
+    /**
+     * 查询某一天注册人数
+     * @param day
+     * @return
+     */
+    @GetMapping("countRegister/{day}")
+    public R countRegister(@PathVariable String day){
+        Integer count = memberService.countRegisterDay(day);
+        return R.ok().data("countRegister",count);
+    }
+
 }
 

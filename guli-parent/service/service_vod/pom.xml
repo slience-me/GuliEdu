@@ -8,14 +8,6 @@
     </parent>
 
     <artifactId>service_vod</artifactId>
-    <packaging>jar</packaging>
-
-    <name>service_vod</name>
-    <url>http://maven.apache.org</url>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>com.aliyun</groupId>

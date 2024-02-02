@@ -1,7 +1,7 @@
-package com.atguigu.staservice.schedule;
+package xyz.slienceme.staservice.schedule;
 
-import com.atguigu.staservice.service.StatisticsDailyService;
-import com.atguigu.staservice.utils.DateUtil;
+import xyz.slienceme.staservice.service.StatisticsDailyService;
+import xyz.slienceme.staservice.utils.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -19,6 +19,8 @@ public class ScheduledTask {
     public void task1() {
         System.out.println("**************task1执行了..");
     }
+
+    // ss mm HH dd MM ? yyyy
 
     //在每天凌晨1点，把前一天数据进行数据查询添加
     @Scheduled(cron = "0 0 1 * * ?")

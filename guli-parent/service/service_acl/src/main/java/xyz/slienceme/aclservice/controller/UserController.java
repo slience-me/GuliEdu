@@ -1,11 +1,11 @@
-package com.atguigu.aclservice.controller;
+package xyz.slienceme.aclservice.controller;
 
 
-import com.atguigu.aclservice.entity.User;
-import com.atguigu.aclservice.service.RoleService;
-import com.atguigu.aclservice.service.UserService;
-import com.atguigu.commonutils.MD5;
-import com.atguigu.commonutils.R;
+import xyz.slienceme.aclservice.entity.User;
+import xyz.slienceme.aclservice.service.RoleService;
+import xyz.slienceme.aclservice.service.UserService;
+import xyz.slienceme.commonutils.MD5;
+import xyz.slienceme.commonutils.R;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -23,8 +23,8 @@ import java.util.Map;
  * 用户表 前端控制器
  * </p>
  *
- * @author testjava
- * @since 2020-01-12
+ * @author slience_me
+ * @since 2024-02-02
  */
 @RestController
 @RequestMapping("/admin/acl/user")

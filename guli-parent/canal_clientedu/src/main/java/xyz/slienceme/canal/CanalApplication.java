@@ -1,7 +1,7 @@
-package com.atguigu.canal;
+package xyz.slienceme.canal;
 
 
-import com.atguigu.canal.client.CanalClient;
+import xyz.slienceme.canal.client.CanalClient;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

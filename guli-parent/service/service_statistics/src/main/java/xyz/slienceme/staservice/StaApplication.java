@@ -1,4 +1,4 @@
-package com.atguigu.staservice;
+package xyz.slienceme.staservice;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -9,10 +9,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.atguigu"})
+@ComponentScan(basePackages = {"xyz.slienceme"})
 @EnableDiscoveryClient
 @EnableFeignClients
-@MapperScan("com.atguigu.staservice.mapper")
+@MapperScan("xyz.slienceme.staservice.mapper")
 @EnableScheduling
 public class StaApplication {
 

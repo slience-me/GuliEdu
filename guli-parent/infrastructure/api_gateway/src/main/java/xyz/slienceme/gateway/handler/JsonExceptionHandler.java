@@ -1,4 +1,4 @@
-package com.atguigu.gateway.handler;
+package xyz.slienceme.gateway.handler;
 
 import org.springframework.boot.autoconfigure.web.ErrorProperties;
 import org.springframework.boot.autoconfigure.web.ResourceProperties;
@@ -16,7 +16,8 @@ import java.util.Map;
  *
  * <p>异常时用JSON代替HTML异常信息<p>
  *
- * @author yinjihuan
+ * @author slience_me
+ * @since 2024-02-02
  *
  */
 public class JsonExceptionHandler extends DefaultErrorWebExceptionHandler {

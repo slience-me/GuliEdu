@@ -1,4 +1,4 @@
-package com.atguigu.eduorder.entity;
+package xyz.slienceme.eduorder.entity;
 
 import java.math.BigDecimal;
 
@@ -17,8 +17,8 @@ import lombok.experimental.Accessors;
  * 订单
  * </p>
  *
- * @author testjava
- * @since 2020-03-13
+ * @author slience_me
+ * @since 2024-01-31
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

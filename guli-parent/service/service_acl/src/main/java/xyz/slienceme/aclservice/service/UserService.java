@@ -1,6 +1,6 @@
-package com.atguigu.aclservice.service;
+package xyz.slienceme.aclservice.service;
 
-import com.atguigu.aclservice.entity.User;
+import xyz.slienceme.aclservice.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -8,8 +8,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * 用户表 服务类
  * </p>
  *
- * @author testjava
- * @since 2020-01-12
+ * @author slience_me
+ * @since 2024-02-02
  */
 public interface UserService extends IService<User> {
 

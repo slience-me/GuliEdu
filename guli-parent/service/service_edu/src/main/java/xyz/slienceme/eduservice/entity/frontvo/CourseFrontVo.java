@@ -1,4 +1,4 @@
-package com.atguigu.eduservice.entity.frontvo;
+package xyz.slienceme.eduservice.entity.frontvo;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

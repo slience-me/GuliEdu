@@ -1,4 +1,4 @@
-package demo;
+package xyz.slienceme.demo;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -26,9 +26,9 @@ public class CodeGenerator {
         // 2、全局配置
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
-        gc.setOutputDir("E:\\work\\guli_parent\\service\\service_order" + "/src/main/java");
+        gc.setOutputDir("D:\\codeHub\\Java\\Study\\GuliEdu\\guli-parent\\service\\service_order" + "/src/main/java");
 
-        gc.setAuthor("testjava");
+        gc.setAuthor("slience_me");
         gc.setOpen(false); //生成后是否打开资源管理器
         gc.setFileOverride(false); //重新生成时文件是否覆盖
 
@@ -53,9 +53,9 @@ public class CodeGenerator {
         // 4、包配置
         PackageConfig pc = new PackageConfig();
         pc.setModuleName("eduorder"); //模块名
-        //包  com.atguigu.eduservice
-        pc.setParent("com.atguigu");
-        //包  com.atguigu.eduservice.controller
+        //包  xyz.slienceme.eduservice
+        pc.setParent("xyz.slienceme");
+        //包  xyz.slienceme.eduservice.controller
         pc.setController("controller");
         pc.setEntity("entity");
         pc.setService("service");

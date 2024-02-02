@@ -1,10 +1,10 @@
-package com.atguigu.aclservice.service.impl;
+package xyz.slienceme.aclservice.service.impl;
 
-import com.atguigu.aclservice.entity.Role;
-import com.atguigu.aclservice.entity.UserRole;
-import com.atguigu.aclservice.mapper.RoleMapper;
-import com.atguigu.aclservice.service.RoleService;
-import com.atguigu.aclservice.service.UserRoleService;
+import xyz.slienceme.aclservice.entity.Role;
+import xyz.slienceme.aclservice.entity.UserRole;
+import xyz.slienceme.aclservice.mapper.RoleMapper;
+import xyz.slienceme.aclservice.service.RoleService;
+import xyz.slienceme.aclservice.service.UserRoleService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +22,8 @@ import java.util.stream.Collectors;
  *  服务实现类
  * </p>
  *
- * @author testjava
- * @since 2020-01-12
+ * @author slience_me
+ * @since 2024-02-02
  */
 @Service
 public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements RoleService {

@@ -1,8 +1,8 @@
 package xyz.slienceme.serurity.filter;
 
-import com.atguigu.commonutils.R;
-import com.atguigu.commonutils.ResponseUtil;
-import com.atguigu.serurity.security.TokenManager;
+import xyz.slienceme.commonutils.R;
+import xyz.slienceme.commonutils.ResponseUtil;
+import xyz.slienceme.serurity.security.TokenManager;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -26,14 +26,14 @@ import java.util.List;
  * 访问过滤器
  * </p>
  *
- * @author qy
- * @since 2019-11-08
+ * @author slience_me
+ * @since 2024-02-02
  */
 public class TokenAuthenticationFilter extends BasicAuthenticationFilter {
     private TokenManager tokenManager;
     private RedisTemplate redisTemplate;
 
-    public TokenAuthenticationFilter(AuthenticationManager authManager, TokenManager tokenManager,RedisTemplate redisTemplate) {
+    public TokenAuthenticationFilter(AuthenticationManager authManager, TokenManager tokenManager, RedisTemplate redisTemplate) {
         super(authManager);
         this.tokenManager = tokenManager;
         this.redisTemplate = redisTemplate;
@@ -42,16 +42,18 @@ public class TokenAuthenticationFilter extends BasicAuthenticationFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain)
             throws IOException, ServletException {
-        logger.info("================="+req.getRequestURI());
-        if(req.getRequestURI().indexOf("admin") == -1) {
+        logger.info("=================" + req.getRequestURI());
+        if (req.getRequestURI().indexOf("admin") == -1) {
             chain.doFilter(req, res);
             return;
         }
 
         UsernamePasswordAuthenticationToken authentication = null;
         try {
+            logger.info("授权过滤器，验证Token...");
             authentication = getAuthentication(req);
         } catch (Exception e) {
+            // 可能token过期
             ResponseUtil.out(res, R.error());
         }
 
@@ -71,8 +73,8 @@ public class TokenAuthenticationFilter extends BasicAuthenticationFilter {
 
             List<String> permissionValueList = (List<String>) redisTemplate.opsForValue().get(userName);
             Collection<GrantedAuthority> authorities = new ArrayList<>();
-            for(String permissionValue : permissionValueList) {
-                if(StringUtils.isEmpty(permissionValue)) continue;
+            for (String permissionValue : permissionValueList) {
+                if (StringUtils.isEmpty(permissionValue)) continue;
                 SimpleGrantedAuthority authority = new SimpleGrantedAuthority(permissionValue);
                 authorities.add(authority);
             }

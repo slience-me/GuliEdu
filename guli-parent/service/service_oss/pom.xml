@@ -8,14 +8,6 @@
     </parent>
 
     <artifactId>service_oss</artifactId>
-    <packaging>jar</packaging>
-
-    <name>service_oss</name>
-    <url>http://maven.apache.org</url>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
     <dependencies>
         <!-- 阿里云oss依赖 -->

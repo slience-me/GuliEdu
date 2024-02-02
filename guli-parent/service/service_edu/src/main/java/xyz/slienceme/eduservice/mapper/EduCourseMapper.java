@@ -2,6 +2,7 @@ package xyz.slienceme.eduservice.mapper;
 
 import xyz.slienceme.eduservice.entity.EduCourse;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import xyz.slienceme.eduservice.entity.frontvo.CourseWebVo;
 import xyz.slienceme.eduservice.entity.vo.CoursePublishVo;
 
 /**
@@ -16,4 +17,7 @@ public interface EduCourseMapper extends BaseMapper<EduCourse> {
 
 
     public CoursePublishVo getPublishCourseInfo(String courseId);
+
+    //根据课程id，编写sql语句查询课程信息
+    CourseWebVo getBaseCourseInfo(String courseId);
 }

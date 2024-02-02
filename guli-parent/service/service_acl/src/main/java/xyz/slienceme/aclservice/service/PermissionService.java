@@ -1,7 +1,7 @@
-package com.atguigu.aclservice.service;
+package xyz.slienceme.aclservice.service;
 
 import com.alibaba.fastjson.JSONObject;
-import com.atguigu.aclservice.entity.Permission;
+import xyz.slienceme.aclservice.entity.Permission;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
@@ -11,8 +11,8 @@ import java.util.List;
  * 权限 服务类
  * </p>
  *
- * @author testjava
- * @since 2020-01-12
+ * @author slience_me
+ * @since 2024-02-02
  */
 public interface PermissionService extends IService<Permission> {
 

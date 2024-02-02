@@ -1,6 +1,6 @@
-package com.atguigu.aclservice.mapper;
+package xyz.slienceme.aclservice.mapper;
 
-import com.atguigu.aclservice.entity.UserRole;
+import xyz.slienceme.aclservice.entity.UserRole;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -8,8 +8,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  *  Mapper 接口
  * </p>
  *
- * @author testjava
- * @since 2020-01-12
+ * @author slience_me
+ * @since 2024-02-02
  */
 public interface UserRoleMapper extends BaseMapper<UserRole> {
 

@@ -1,4 +1,4 @@
-package com.atguigu.gateway.handler;
+package xyz.slienceme.gateway.handler;
 
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.web.ResourceProperties;
@@ -20,7 +20,8 @@ import java.util.List;
 /**
  * 覆盖默认的异常处理
  *
- * @author yinjihuan
+ * @author slience_me
+ * @since 2024-02-02
  *
  */
 @Configuration

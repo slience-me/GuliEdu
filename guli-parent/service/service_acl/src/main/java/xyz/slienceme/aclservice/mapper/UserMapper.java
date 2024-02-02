@@ -1,6 +1,6 @@
-package com.atguigu.aclservice.mapper;
+package xyz.slienceme.aclservice.mapper;
 
-import com.atguigu.aclservice.entity.User;
+import xyz.slienceme.aclservice.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -8,8 +8,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * 用户表 Mapper 接口
  * </p>
  *
- * @author testjava
- * @since 2020-01-12
+ * @author slience_me
+ * @since 2024-02-02
  */
 public interface UserMapper extends BaseMapper<User> {
 

@@ -1,13 +1,13 @@
-package com.atguigu.eduorder.service.impl;
+package xyz.slienceme.eduorder.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.atguigu.eduorder.entity.Order;
-import com.atguigu.eduorder.entity.PayLog;
-import com.atguigu.eduorder.mapper.PayLogMapper;
-import com.atguigu.eduorder.service.OrderService;
-import com.atguigu.eduorder.service.PayLogService;
-import com.atguigu.eduorder.utils.HttpClient;
-import com.atguigu.servicebase.exceptionhandler.GuliException;
+import xyz.slienceme.eduorder.entity.Order;
+import xyz.slienceme.eduorder.entity.PayLog;
+import xyz.slienceme.eduorder.mapper.PayLogMapper;
+import xyz.slienceme.eduorder.service.OrderService;
+import xyz.slienceme.eduorder.service.PayLogService;
+import xyz.slienceme.eduorder.utils.HttpClient;
+import xyz.slienceme.servicebase.exceptionhandler.GuliException;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.wxpay.sdk.WXPayUtil;
@@ -24,8 +24,8 @@ import java.util.Map;
  * 支付日志表 服务实现类
  * </p>
  *
- * @author testjava
- * @since 2020-03-13
+ * @author slience_me
+ * @since 2024-01-31
  */
 @Service
 public class PayLogServiceImpl extends ServiceImpl<PayLogMapper, PayLog> implements PayLogService {

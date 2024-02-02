@@ -1,13 +1,13 @@
-package com.atguigu.eduorder.service.impl;
+package xyz.slienceme.eduorder.service.impl;
 
-import com.atguigu.commonutils.ordervo.CourseWebVoOrder;
-import com.atguigu.commonutils.ordervo.UcenterMemberOrder;
-import com.atguigu.eduorder.client.EduClient;
-import com.atguigu.eduorder.client.UcenterClient;
-import com.atguigu.eduorder.entity.Order;
-import com.atguigu.eduorder.mapper.OrderMapper;
-import com.atguigu.eduorder.service.OrderService;
-import com.atguigu.eduorder.utils.OrderNoUtil;
+import xyz.slienceme.commonutils.ordervo.CourseWebVoOrder;
+import xyz.slienceme.commonutils.ordervo.UcenterMemberOrder;
+import xyz.slienceme.eduorder.client.EduClient;
+import xyz.slienceme.eduorder.client.UcenterClient;
+import xyz.slienceme.eduorder.entity.Order;
+import xyz.slienceme.eduorder.mapper.OrderMapper;
+import xyz.slienceme.eduorder.service.OrderService;
+import xyz.slienceme.eduorder.utils.OrderNoUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +17,8 @@ import org.springframework.stereotype.Service;
  * 订单 服务实现类
  * </p>
  *
- * @author testjava
- * @since 2020-03-13
+ * @author slience_me
+ * @since 2024-01-31
  */
 @Service
 public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements OrderService {
@@ -36,7 +36,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         UcenterMemberOrder userInfoOrder = ucenterClient.getUserInfoOrder(memberId);
 
         //通过远程调用根据课程id获取课信息
-        CourseWebVoOrder courseInfoOrder = eduClient.getCourseInfoOrder(courseId);
+        CourseWebVoOrder courseInfoOrder = eduClient.getCourseInfo(courseId);
 
         //创建Order对象，向order对象里面设置需要数据
         Order order = new Order();

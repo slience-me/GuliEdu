@@ -1,8 +1,8 @@
-package com.atguigu.eduorder.controller;
+package xyz.slienceme.eduorder.controller;
 
 
-import com.atguigu.commonutils.R;
-import com.atguigu.eduorder.service.PayLogService;
+import xyz.slienceme.commonutils.R;
+import xyz.slienceme.eduorder.service.PayLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,12 +13,12 @@ import java.util.Map;
  * 支付日志表 前端控制器
  * </p>
  *
- * @author testjava
- * @since 2020-03-13
+ * @author slience_me
+ * @since 2024-01-31
  */
 @RestController
 @RequestMapping("/eduorder/paylog")
-@CrossOrigin
+//@CrossOrigin()
 public class PayLogController {
 
     @Autowired

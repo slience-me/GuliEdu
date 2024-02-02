@@ -1,11 +1,11 @@
-package com.atguigu.staservice.service.impl;
+package xyz.slienceme.staservice.service.impl;
 
-import com.atguigu.commonutils.R;
-import com.atguigu.commonutils.ordervo.UcenterMemberOrder;
-import com.atguigu.staservice.client.UcenterClient;
-import com.atguigu.staservice.entity.StatisticsDaily;
-import com.atguigu.staservice.mapper.StatisticsDailyMapper;
-import com.atguigu.staservice.service.StatisticsDailyService;
+import xyz.slienceme.commonutils.R;
+import xyz.slienceme.commonutils.ordervo.UcenterMemberOrder;
+import xyz.slienceme.staservice.client.UcenterClient;
+import xyz.slienceme.staservice.entity.StatisticsDaily;
+import xyz.slienceme.staservice.mapper.StatisticsDailyMapper;
+import xyz.slienceme.staservice.service.StatisticsDailyService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.apache.commons.lang3.RandomUtils;
@@ -22,8 +22,8 @@ import java.util.Map;
  * 网站统计日数据 服务实现类
  * </p>
  *
- * @author testjava
- * @since 2020-03-14
+ * @author slience_me
+ * @since 2024-01-31
  */
 @Service
 public class StatisticsDailyServiceImpl extends ServiceImpl<StatisticsDailyMapper, StatisticsDaily> implements StatisticsDailyService {

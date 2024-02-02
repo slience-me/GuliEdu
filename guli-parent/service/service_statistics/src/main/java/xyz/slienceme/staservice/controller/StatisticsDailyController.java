@@ -1,8 +1,8 @@
-package com.atguigu.staservice.controller;
+package xyz.slienceme.staservice.controller;
 
 
-import com.atguigu.commonutils.R;
-import com.atguigu.staservice.service.StatisticsDailyService;
+import xyz.slienceme.commonutils.R;
+import xyz.slienceme.staservice.service.StatisticsDailyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,12 +13,12 @@ import java.util.Map;
  * 网站统计日数据 前端控制器
  * </p>
  *
- * @author testjava
- * @since 2020-03-14
+ * @author slience_me
+ * @since 2024-01-31
  */
 @RestController
 @RequestMapping("/staservice/sta")
-@CrossOrigin
+//@CrossOrigin()
 public class StatisticsDailyController {
 
     @Autowired

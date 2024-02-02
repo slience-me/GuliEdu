@@ -1,12 +1,12 @@
-package com.atguigu.aclservice.service.impl;
+package xyz.slienceme.aclservice.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.atguigu.aclservice.entity.Role;
-import com.atguigu.aclservice.entity.User;
-import com.atguigu.aclservice.service.IndexService;
-import com.atguigu.aclservice.service.PermissionService;
-import com.atguigu.aclservice.service.RoleService;
-import com.atguigu.aclservice.service.UserService;
+import xyz.slienceme.aclservice.entity.Role;
+import xyz.slienceme.aclservice.entity.User;
+import xyz.slienceme.aclservice.service.IndexService;
+import xyz.slienceme.aclservice.service.PermissionService;
+import xyz.slienceme.aclservice.service.RoleService;
+import xyz.slienceme.aclservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;

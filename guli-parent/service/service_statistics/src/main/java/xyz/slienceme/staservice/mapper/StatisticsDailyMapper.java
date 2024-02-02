@@ -1,6 +1,6 @@
-package com.atguigu.staservice.mapper;
+package xyz.slienceme.staservice.mapper;
 
-import com.atguigu.staservice.entity.StatisticsDaily;
+import xyz.slienceme.staservice.entity.StatisticsDaily;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -8,8 +8,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * 网站统计日数据 Mapper 接口
  * </p>
  *
- * @author testjava
- * @since 2020-03-14
+ * @author slience_me
+ * @since 2024-01-31
  */
 public interface StatisticsDailyMapper extends BaseMapper<StatisticsDaily> {
 

@@ -1,4 +1,4 @@
-package com.atguigu.gateway.filter;
+package xyz.slienceme.gateway.filter;
 
 import com.google.gson.JsonObject;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
@@ -20,8 +20,8 @@ import java.util.List;
  * 全局Filter，统一处理会员登录与外部不允许访问的服务
  * </p>
  *
- * @author qy
- * @since 2019-11-21
+ * @author slience_me
+ * @since 2024-02-02
  */
 @Component
 public class AuthGlobalFilter implements GlobalFilter, Ordered {
@@ -33,6 +33,7 @@ public class AuthGlobalFilter implements GlobalFilter, Ordered {
         ServerHttpRequest request = exchange.getRequest();
         String path = request.getURI().getPath();
         //谷粒学院api接口，校验用户必须登录
+        System.out.println("api_gateway path = " + path);
         if(antPathMatcher.match("/api/**/auth/**", path)) {
             List<String> tokenList = request.getHeaders().get("token");
             if(null == tokenList) {

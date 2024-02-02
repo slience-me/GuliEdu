@@ -1,6 +1,6 @@
-package com.atguigu.eduorder.mapper;
+package xyz.slienceme.eduorder.mapper;
 
-import com.atguigu.eduorder.entity.PayLog;
+import xyz.slienceme.eduorder.entity.PayLog;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -8,8 +8,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * 支付日志表 Mapper 接口
  * </p>
  *
- * @author testjava
- * @since 2020-03-13
+ * @author slience_me
+ * @since 2024-01-31
  */
 public interface PayLogMapper extends BaseMapper<PayLog> {
 

@@ -1,8 +1,8 @@
-package com.atguigu.aclservice.service.impl;
+package xyz.slienceme.aclservice.service.impl;
 
-import com.atguigu.aclservice.entity.User;
-import com.atguigu.aclservice.mapper.UserMapper;
-import com.atguigu.aclservice.service.UserService;
+import xyz.slienceme.aclservice.entity.User;
+import xyz.slienceme.aclservice.mapper.UserMapper;
+import xyz.slienceme.aclservice.service.UserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
  * 用户表 服务实现类
  * </p>
  *
- * @author testjava
- * @since 2020-01-12
+ * @author slience_me
+ * @since 2024-02-02
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {

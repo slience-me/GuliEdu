@@ -8,12 +8,5 @@
     </parent>
 
     <artifactId>service_cms</artifactId>
-    <packaging>jar</packaging>
 
-    <name>service_cms</name>
-    <url>http://maven.apache.org</url>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 </project>

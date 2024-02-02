@@ -1,6 +1,6 @@
-package com.atguigu.eduorder.service;
+package xyz.slienceme.eduorder.service;
 
-import com.atguigu.eduorder.entity.Order;
+import xyz.slienceme.eduorder.entity.Order;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -8,8 +8,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * 订单 服务类
  * </p>
  *
- * @author testjava
- * @since 2020-03-13
+ * @author slience_me
+ * @since 2024-01-31
  */
 public interface OrderService extends IService<Order> {
 
