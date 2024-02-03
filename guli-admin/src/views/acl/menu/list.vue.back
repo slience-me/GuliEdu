@@ -2,7 +2,7 @@
   <div class="app-container">
     <el-input v-model="filterText" placeholder="Filter keyword" style="margin-bottom:30px;" />
 
-
+    
     <el-table
     :data="menuList"
     style="width: 100%;margin-bottom: 20px;"
@@ -32,7 +32,7 @@
       prop="permissionValue"
       label="权限值">
     </el-table-column>
-    <el-table-column
+    <el-table-column 
       label="操作">
       <template slot-scope="scope">
       <!-- v-if="node.level == 1 || node.level == 2" v-if="node.level == 3" v-if="node.level == 4"-->
@@ -75,7 +75,7 @@
           <el-form-item label="组件路径">
             <el-input v-model="menu.component"/>
           </el-form-item>
-
+  
         </el-form>
         <div slot="footer" class="dialog-footer">
             <el-button @click="restData()">取 消</el-button>
@@ -97,7 +97,7 @@
             <el-form-item label="功能权限值">
                 <el-input v-model="permission.permissionValue"/>
             </el-form-item>
-
+  
         </el-form>
         <div slot="footer" class="dialog-footer">
             <el-button @click="restData()">取 消</el-button>
@@ -250,11 +250,11 @@ export default {
       } else{ //修改
         this.update(this.menu)
       }
-
+        
     },
     update(obj){
-
-      //debugger
+      
+      debugger
       menu.update(obj).then(response => {
         this.dialogFormVisible = false
           this.$message({
@@ -289,11 +289,11 @@ export default {
                 this.$message({
                     type:'error',
                     message:"添加二级分类失败"
-                })
+                })                
                 //3、把menu清空
                 this.menu = {...menuForm}
                 this.permission = {...perForm}
-
+                
             })
     },
     getById(data){

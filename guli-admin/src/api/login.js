@@ -2,7 +2,6 @@ import request from '@/utils/request'
 
 // 登录
 export function login(username, password) {
- // debugger
   return request({
     url: '/admin/acl/login',
     method: 'post',

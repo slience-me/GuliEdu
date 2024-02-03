@@ -29,11 +29,11 @@
 
 **架构设计需要考虑的几个方面：**
 
-- **性能：**主要考虑访问频率，每个用户每天的访问次数。项目初始阶段用户的访问量并不大，如果考虑做运营推广，可能会迎来服务器访问量骤增，因此要考虑\**分布式部署，引入缓存
-- **可扩展性：**系统功能会随着用户量的增加以及多变的互联网用户需求不断地扩展，因此考虑到系统的可扩展性的要求需要使用微服务架构，引入消息中间件
-- **高可用：**系统一旦宕机，将会带来不可挽回的损失，因此必须做负载均衡，甚至是异地多活这类复杂的方案。如果数据丢失，修复将会非常麻烦，只能靠人工逐条修复，这个很难接受，因此需要考虑存储高可靠。我们需要考虑多种异常情况：机器故障、机房故障，针对机器故障，我们需要设计 MySQL 同机房主备方案；针对机房故障，我们需要设计 MySQL 跨机房同步方案。
-- **安全性：**系统的信息有一定的隐私性，例如用户的个人身份信息，不包含强隐私（例如玉照、情感）的信息，因此使用账号密码管理、数据库访问权限控制即可。
-- **成本：**视频类网站的主要成本在于服务器成本、流量成本、存储成本、流媒体研发成本，中小型公司可以考虑使用云服务器和云服务。
+- **性能：** 主要考虑访问频率，每个用户每天的访问次数。项目初始阶段用户的访问量并不大，如果考虑做运营推广，可能会迎来服务器访问量骤增，因此要考虑 \** 分布式部署，引入缓存
+- **可扩展性：** 系统功能会随着用户量的增加以及多变的互联网用户需求不断地扩展，因此考虑到系统的可扩展性的要求需要使用微服务架构，引入消息中间件
+- **高可用：** 系统一旦宕机，将会带来不可挽回的损失，因此必须做负载均衡，甚至是异地多活这类复杂的方案。如果数据丢失，修复将会非常麻烦，只能靠人工逐条修复，这个很难接受，因此需要考虑存储高可靠。我们需要考虑多种异常情况：机器故障、机房故障，针对机器故障，我们需要设计 MySQL 同机房主备方案；针对机房故障，我们需要设计 MySQL 跨机房同步方案。
+- **安全性：** 系统的信息有一定的隐私性，例如用户的个人身份信息，不包含强隐私（例如玉照、情感）的信息，因此使用账号密码管理、数据库访问权限控制即可。
+- **成本：** 视频类网站的主要成本在于服务器成本、流量成本、存储成本、流媒体研发成本，中小型公司可以考虑使用云服务器和云服务。
 
 ![](https://raw.githubusercontent.com/slience-me/picGo/master/images/20210427173630.png)
 
@@ -117,33 +117,186 @@
 
 ## 组织结构
 
+`完整结构`
+
+```
+GuliEdu/
+├── guli-admin
+│   ├── build
+│   ├── config
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── LICENSE
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── README.md
+│   ├── README-zh.md
+│   ├── src
+│   └── static
+├── guli-front
+│   ├── api
+│   ├── assets
+│   ├── components
+│   ├── layouts
+│   ├── middleware
+│   ├── nuxt.config.js
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── pages
+│   ├── plugins
+│   ├── README.md
+│   ├── static
+│   ├── store
+│   └── utils
+├── guli-parent
+│   ├── 目录结构.md
+│   ├── canal_clientedu
+│   ├── common
+│   ├── infrastructure
+│   ├── pom.xml
+│   └── service
+├── README.md
+└── sql
+    ├── guli_acl.sql
+    ├── guli_cms.sql
+    ├── guli_edu.sql
+    ├── guli_order.sql
+    ├── guli_statistics.sql
+    └── guli_ucenter.sql
+```
+
+
+
 `后端`
 
 ```
-guli-parent
-├─common  
-│  └─spring_security 
-├─guli-acl -- 权限管理模块
-├─guli-teacher -- 讲师模块
-├─guli_cms -- 幻灯片管理模块
-├─guli_common -- 公共模块
-├─guli_msm -- 阿里短信模块
-├─guli_order -- 订单模块
-├─guli_oss -- 阿里OSS模块
-├─guli_statistics -- 数据统计模块
-├─guli_ucenter -- 会员模块
-├─guli_vod -- 阿里视频点播模块
-└─infrastructure 
-    └─api_gateway -- 网关模块
+GuliEdu/guli-parent/
+├── 目录结构.md
+├── canal_clientedu
+│   ├── pom.xml
+│   └── src
+├── common
+│   ├── common_utils
+│   ├── pom.xml
+│   ├── service_base
+│   └── spring_security
+├── infrastructure
+│   ├── api_gateway
+│   └── pom.xml
+├── pom.xml
+└── service
+    ├── pom.xml
+    ├── service_acl
+    ├── service_cms
+    ├── service_edu
+    ├── service_msm
+    ├── service_order
+    ├── service_oss
+    ├── service_statistics
+    ├── service_ucenter
+    └── service_vod
 ```
 
-`前端`
+`前端guli_admin`
 
 ~~~
-guli-web
-├─ guli_admin  -- 后台UI
-└─ guli_front  -- 前台UI
+GuliEdu/guli-admin/
+├── build
+│   ├── build.js
+│   ├── check-versions.js
+│   ├── logo.png
+│   ├── utils.js
+│   ├── vue-loader.conf.js
+│   ├── webpack.base.conf.js
+│   ├── webpack.dev.conf.js
+│   └── webpack.prod.conf.js
+├── config
+│   ├── dev.env.js
+│   ├── index.js
+│   └── prod.env.js
+├── favicon.ico
+├── index.html
+├── LICENSE
+├── package.json
+├── package-lock.json
+├── README.md
+├── README-zh.md
+├── src
+│   ├── api
+│   ├── App.vue
+│   ├── assets
+│   ├── components
+│   ├── icons
+│   ├── main.js
+│   ├── permission.js
+│   ├── router
+│   ├── store
+│   ├── styles
+│   ├── utils
+│   └── views
+└── static
+    ├── 01.jpg
+    ├── 01.xlsx
+    └── tinymce4.7.5
 ~~~
+
+`前端guli_front`
+
+```
+GuliEdu/guli-front/
+├── api
+│   ├── banner.js
+│   ├── commonedu.js
+│   ├── course.js
+│   ├── index.js
+│   ├── login.js
+│   ├── orders.js
+│   ├── register.js
+│   ├── teacher.js
+│   └── vod.js
+├── assets
+│   ├── css
+│   ├── img
+│   ├── js
+│   ├── photo
+│   └── README.md
+├── components
+│   ├── AppLogo.vue
+│   └── README.md
+├── layouts
+│   ├── default.vue
+│   ├── README.md
+│   ├── sign.vue
+│   └── video.vue
+├── middleware
+│   └── README.md
+├── nuxt.config.js
+├── package.json
+├── package-lock.json
+├── pages
+│   ├── article
+│   ├── course
+│   ├── index.vue
+│   ├── login.vue
+│   ├── orders
+│   ├── pay
+│   ├── player
+│   ├── qa
+│   ├── README.md
+│   ├── register.vue
+│   └── teacher
+├── plugins
+│   ├── nuxt-swiper-plugin.js
+│   └── README.md
+├── README.md
+├── static
+│   ├── favicon.ico
+│   └── README.md
+├── store
+│   └── README.md
+└── utils
+    └── request.js
+```
 
 ## 技术选型
 
@@ -287,3 +440,51 @@ aliyun.vod.file.keyid=<you keyid>
 aliyun.vod.file.keysecret=<you keysecret>
 ~~~
 
+
+
+`谷粒学院相关环境` 
+
+链接：https://pan.baidu.com/s/1oRCwM0voI7Mfmkl_1ueQyQ?pwd=eyfv 
+提取码：eyfv  --来自百度网盘超级会员V5的分享
+
+侵权联系，立即删除
+
+---
+
+## 问题汇总
+
+node版本管理工具见nvm
+
+### 1. guli-admin项目相关
+
+注意node版本问题，我使用了node版本为10.14.2，相关安装包见百度网盘
+
+```json
+"dependencies": {
+    "axios": "0.18.0",
+    "echarts": "^4.3.0",
+    "element-ui": "^2.4.6",
+    "js-cookie": "2.2.0",
+    "normalize.css": "7.0.0",
+    "nprogress": "0.2.0",
+    "vue": "2.5.17",
+    "vue-router": "3.0.1",
+    "vuex": "3.0.1",
+    "vuex-persistedstate": "^4.1.0"
+  },
+```
+
+### 2. guli-front项目相关
+
+注意node版本问题，我使用了node版本为18.19.0，相关安装包见百度网盘
+
+```json
+ "dependencies": {
+    "axios": "^0.21.1",
+    "element-ui": "^2.15.1",
+    "js-cookie": "^2.2.1",
+    "nuxt": "^2.0.0",
+    "vue-awesome-swiper": "^3.1.3",
+    "vue-qriously": "^1.1.1"
+  },
+```

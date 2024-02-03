@@ -53,7 +53,7 @@ export default {
         menu.toAssign(roleId).then(response => {
             this.data = response.data.children
             var jsonList = JSON.parse(JSON.stringify(this.data))
-            // debugger;
+            //debugger;
             var list = []
             this.getJsonToList(list, jsonList[0]['children'])
             console.log("最终集合")

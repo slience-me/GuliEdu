@@ -21,22 +21,28 @@ import Layout from '../views/layout/Layout'
     icon: 'svg-name'             the icon show in the sidebar,
   }
 **/
-export const constantRoutes  = [
+export const constantRoutes = [
   { path: '/login', component: () => import('@/views/login/index'), hidden: true },
   { path: '/404', component: () => import('@/views/404'), hidden: true },
 
+  // 首页
   {
     path: '/',
     component: Layout,
     redirect: '/dashboard',
     name: 'Dashboard',
-    hidden: true,
     children: [{
       path: 'dashboard',
-      component: () => import('@/views/dashboard/index')
+      component: () => import('@/views/dashboard/index'),
+      meta: { title: '谷粒学院后台首页', icon: 'dashboard' }
     }]
-  },
+  }]
+/**
+ * 动态路由
+ */
+export const asyncRoutes = [
 
+  // 讲师管理
   {
     path: '/teacher',
     component: Layout,
@@ -52,12 +58,12 @@ export const constantRoutes  = [
       },
       {
         path: 'save',
-        name: '添加讲师',
+        name: '添加讲师',  
         component: () => import('@/views/edu/teacher/save'),
         meta: { title: '添加讲师', icon: 'tree' }
       },
       {
-        path: 'edit/:id',
+        path: 'edit/:id',   
         name: 'EduTeacherEdit',
         component: () => import('@/views/edu/teacher/save'),
         meta: { title: '编辑讲师', noCache: true },
@@ -81,7 +87,7 @@ export const constantRoutes  = [
       },
       {
         path: 'save',
-        name: '添加课程分类',
+        name: '添加课程分类',  
         component: () => import('@/views/edu/subject/save'),
         meta: { title: '添加课程分类', icon: 'tree' }
       }
@@ -103,7 +109,7 @@ export const constantRoutes  = [
       },
       {
         path: 'info',
-        name: '添加课程',
+        name: '添加课程',  
         component: () => import('@/views/edu/course/info'),
         meta: { title: '添加课程', icon: 'tree' }
       },
@@ -152,6 +158,7 @@ export const constantRoutes  = [
       }
     ]
   },
+
   {
     path: '/acl',
     component: Layout,
@@ -226,13 +233,6 @@ export const constantRoutes  = [
   { path: '*', redirect: '/404', hidden: true }
 ]
 
-// export default new Router({
-//   // mode: 'history', //后端支持可开
-//   scrollBehavior: () => ({ y: 0 }),
-//   routes: constantRouterMap
-// })
-
-
 const createRouter = () => new Router({
   // mode: 'history', // require service support
   scrollBehavior: () => ({ y: 0 }),
@@ -248,4 +248,3 @@ const router = createRouter()
 // })
 
 export default router
-
