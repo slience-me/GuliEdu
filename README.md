@@ -11,7 +11,7 @@
 
 - 项目文档
 
-  [slience_me的博客](https://slienceme.xyz)
+  [slience_me的博客](https://slienceme.cn)
 
 - 接口文档
 
